@@ -1,37 +1,44 @@
-#include <stdio.h>
+// Including the necessary header files
 #include <cs50.h>
+#include <stdio.h>
 
-int get_size(void);
-void print_grid(int size);
+int size(void);
+void build(int bricks, int spaces);
 
 int main(void)
 {
-    //Get size of grid
-     int n = get_size();
-    //Print the grid of blocks
-     print_grid(n);
+// Prompting the user to input pyramid's height
+    int n = size();
+    int x = n;
+    for (int i = 0; i < n; i++)
+    {
+        build(i + 1, x - 1);
+        x--;
+    }
 }
 
-
-int get_size(void)
+// Defining the size() function
+int size(void)
 {
     int n;
-    do{
+    do
+    {
         n = get_int("Size:");
     }
-    while(n < 1);
+    while (n < 1);
     return n;
 }
 
-void print_grid(int size)
+// Defining the build() function
+void build(int bricks, int spaces)
 {
-    for(int i = 0;i < size;i++)
+    for (int j = spaces; j > 0; j--)
     {
-        for(int j = 0;j < size;j++)
-        {
-            printf("#");
-        }
-        printf("\n");
+        printf(" ");
     }
-
+    for (int i = 0; i < bricks; i++)
+    {
+        printf("#");
+    }
+    printf("\n");
 }
