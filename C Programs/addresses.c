@@ -7,3 +7,8 @@ int main(void)
    printf("%s\n",s+1);
    printf("%s\n",s+2);
 }
+
+
+
+
+.
