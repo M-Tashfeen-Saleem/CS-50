@@ -9,7 +9,7 @@ int calculate_pennies(int cents);
 int main(void)
 {
 
-    // Prompt the customer for change owed(in cents)
+    // Prompt the customer for change owed (in cents)
     int cents;
     do
     {
